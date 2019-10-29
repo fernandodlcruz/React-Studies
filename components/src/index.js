@@ -2,24 +2,24 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import CommentDetail from './CommentDetail';
+import ApprovalCard from './ApprovalCard';
 
 const App = () => {
     return (
         <div className="ui container comments">
-            <div className="comment">
-                <a href="/" className="avatar">
-                    <img src="logo192.png" alt="avatar" />
-                </a>
-                <div className="content">
-                    <a href="/" className="author">
-                        Fernando
-                    </a>
-                    <div className="metadata">
-                        <span className="date">Today at 6pm</span>
-                    </div>
-                    <div className="text">Nice blog post!</div>
+            <ApprovalCard>
+                <div>
+                    <h4>Warning!</h4>
+                    Are you sure you want to do this?
                 </div>
-            </div>
+            </ApprovalCard>
+            <ApprovalCard>
+                <CommentDetail author="Fernando" timeAgo="Today at 4:45PM" comment="Nice blog post!" />
+            </ApprovalCard>
+            <ApprovalCard>
+                <CommentDetail author="Isabella" timeAgo="Today at 2:00AM" comment="I didn't like this" />
+            </ApprovalCard>
         </div>
     );
 };
